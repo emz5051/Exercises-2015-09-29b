@@ -1,16 +1,23 @@
 
 public class Person {
 
-  String role;
+  public enum Role {
+      TEACHER,
+      STUDENT
+  }
+  
+  Role role;
   String name;
 
-  public Person(String name, String role) {
+  public Person(String name, Role role) {
     this.name = name;
     this.role = role;
   }
 
   @Override
   public String toString() {
-    return this.name + " (" + this.role + ')';
+      // "TEACHER" or "STUDENT"
+      String roleValue = this.role.name();
+    return this.name + " (" + roleValue.toLowerCase() + ')';
   }
 }
